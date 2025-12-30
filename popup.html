@@ -9,7 +9,12 @@
   <body>
     <main class="container">
       <h1>AI Resume Extension</h1>
-      <p>Quick starter popup for your extension.</p>
+      <p>Upload your resume JSON, then download a combined resume and job file.</p>
+      <div class="field">
+        <label for="resume-upload">Resume JSON</label>
+        <input id="resume-upload" type="file" accept="application/json" />
+        <p id="resume-status" role="status" aria-live="polite"></p>
+      </div>
       <button id="ping">Send ping</button>
       <button id="download-indeed">Download job as JSON</button>
       <p id="response" role="status" aria-live="polite"></p>
