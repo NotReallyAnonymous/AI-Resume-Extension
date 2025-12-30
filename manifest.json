@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "AI Resume Extension",
+  "version": "0.1.0",
+  "description": "Basic Chrome extension boilerplate with background, popup, and content script wiring.",
+  "action": {
+    "default_title": "AI Resume Extension",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
