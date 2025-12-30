@@ -41,7 +41,30 @@ button:active {
   transform: translateY(1px);
 }
 
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-weight: 600;
+}
+
+.field input[type='file'] {
+  padding: 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
 #response {
   min-height: 1.2em;
   margin: 0;
+}
+
+#resume-status {
+  min-height: 1.2em;
+  margin: 0;
+  color: #0f172a;
 }
