@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Resume Extension</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>AI Resume Extension</h1>
+      <p>Upload your resume JSON, then download a combined resume and job file.</p>
+      <div class="field">
+        <label for="resume-upload">Resume JSON</label>
+        <input id="resume-upload" type="file" accept="application/json" />
+        <p id="resume-status" role="status" aria-live="polite"></p>
+      </div>
+      <button id="ping">Send ping</button>
+      <button id="download-indeed">Download job as JSON</button>
+      <p id="response" role="status" aria-live="polite"></p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
