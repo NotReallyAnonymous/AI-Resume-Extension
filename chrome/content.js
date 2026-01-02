@@ -55,7 +55,7 @@
     return { status: 'success', job };
   };
 
-  const handleDownload = (resume) => {
+  const extractJob = () => {
     const hostname = window.location.hostname;
 
     if (hostname.includes('linkedin.com')) {
@@ -72,22 +72,6 @@
       return jobResult ?? { status: 'error', reason: 'Unknown extraction error' };
     }
 
-    const payload = {
-      resume: resume ?? {},
-      job: jobResult.job
-    };
-
-    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const anchor = document.createElement('a');
-    anchor.href = url;
-    anchor.download = 'resume-and-job.json';
-    anchor.style.display = 'none';
-    document.body.appendChild(anchor);
-    anchor.click();
-    anchor.remove();
-    URL.revokeObjectURL(url);
-
     return jobResult;
   };
 
@@ -98,7 +82,7 @@
     }
 
     if (message?.type === 'EXTRACT_JOB') {
-      const result = handleDownload(message.resumeData);
+      const result = extractJob();
       sendResponse(result);
     }
   });
